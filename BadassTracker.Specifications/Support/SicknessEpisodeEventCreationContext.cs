@@ -6,5 +6,14 @@
         {
             // doing nothing for the moment - this will be used for setting context when creating events via user interface
         }
+
+        public void CreateEvent()
+        {
+            new SicknessEpisodeEvent();
+        }
+    }
+
+    public class SicknessEpisodeEvent
+    {
     }
 }
