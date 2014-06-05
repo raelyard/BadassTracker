@@ -45,21 +45,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AcceptNewEvent.feature.cs">
+    <Compile Include="Features\AcceptNewEvent.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AcceptNewEvent.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StepDefinitions\CreateNewSicknessEpisodeStepDefinitions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="AcceptNewEvent.feature">
+    <None Include="Features\AcceptNewEvent.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AcceptNewEvent.feature.cs</LastGenOutput>
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

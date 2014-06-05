@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace BadassTracker.Specifications
+namespace BadassTracker.Specifications.Features
 {
     using TechTalk.SpecFlow;
     
