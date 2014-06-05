@@ -1,4 +1,5 @@
-﻿using TechTalk.SpecFlow;
+﻿using BadassTracker.Specifications.Support;
+using TechTalk.SpecFlow;
 
 namespace BadassTracker.Specifications.StepDefinitions
 {
@@ -8,7 +9,7 @@ namespace BadassTracker.Specifications.StepDefinitions
         [Given(@"I am Creating a Sickness Episode Event")]
         public void GivenIAmCreatingASicknessEpisodeEvent()
         {
-            ScenarioContext.Current.Pending();
+            new SicknessEpisodeEventCreationContext().StartCreation();
         }
 
         [When(@"I press add")]
