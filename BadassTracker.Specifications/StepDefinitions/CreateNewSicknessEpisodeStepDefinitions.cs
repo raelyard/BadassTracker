@@ -28,7 +28,7 @@ namespace BadassTracker.Specifications.StepDefinitions
         [Then(@"My Sickness Episode should be tracked")]
         public void ThenMySicknessEpisodeShouldBeTracked()
         {
-            ScenarioContext.Current.Pending();
+            _sicknessEpisodeEventCreationContext.AssertEventTracked();
         }
     }
 }

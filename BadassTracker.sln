@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.30219.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BadassTracker.Specifications", "BadassTracker.Specifications\BadassTracker.Specifications.csproj", "{334496BB-8F3B-49CE-AEA1-E217C9D76C84}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BadassTracker.Model.Tests", "BadassTracker.Model.Tests\BadassTracker.Model.Tests.csproj", "{B885DF0C-D299-4A16-B1B9-D4DAC4A15D1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BadassTracker.Model", "BadassTracker.Model\BadassTracker.Model.csproj", "{1ED76A77-ABB8-4F6B-9B3B-0DEC3458712E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{334496BB-8F3B-49CE-AEA1-E217C9D76C84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{334496BB-8F3B-49CE-AEA1-E217C9D76C84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{334496BB-8F3B-49CE-AEA1-E217C9D76C84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B885DF0C-D299-4A16-B1B9-D4DAC4A15D1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B885DF0C-D299-4A16-B1B9-D4DAC4A15D1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B885DF0C-D299-4A16-B1B9-D4DAC4A15D1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B885DF0C-D299-4A16-B1B9-D4DAC4A15D1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ED76A77-ABB8-4F6B-9B3B-0DEC3458712E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ED76A77-ABB8-4F6B-9B3B-0DEC3458712E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ED76A77-ABB8-4F6B-9B3B-0DEC3458712E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ED76A77-ABB8-4F6B-9B3B-0DEC3458712E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
