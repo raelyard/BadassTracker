@@ -1,6 +1,7 @@
 ﻿using System;
 using BadassTracker.Model.Data;
 using BadassTracker.Model.Events;
+using BadassTracker.Model.Events.Creation;
 using BadassTracker.Model.Events.DomainServices;
 using Rhino.Mocks;
 using Should;
@@ -13,6 +14,8 @@ namespace BadassTracker.Specifications.Support
         private readonly EventPersister _persister;
         private readonly SicknessEpisodeEventManager _manager;
 
+        private DateTime? _endDateTime;
+
         public SicknessEpisodeEventCreationContext()
         {
             _persister = MockRepository.GenerateStub<EventPersister>();
@@ -24,9 +27,19 @@ namespace BadassTracker.Specifications.Support
             // doing nothing for the moment - this will be used for setting context when creating events via user interface
         }
 
+        public void SpecifyEndTime()
+        {
+            _endDateTime = DateTime.Now.AddHours(1);
+        }
+
         public void CreateEvent()
         {
-            _event = _manager.Create(builder => { });
+            Action<SicknessEpisodeEventBuilder> builderAction = builder => { };
+            if (_endDateTime.HasValue)
+            {
+                builderAction = builder => builder.EndingAt(_endDateTime.Value);
+            }
+            _event = _manager.Create(builderAction);
         }
 
         public void AssertEventTracked()

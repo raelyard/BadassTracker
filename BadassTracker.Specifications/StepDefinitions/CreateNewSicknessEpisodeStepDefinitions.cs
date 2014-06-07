@@ -19,6 +19,12 @@ namespace BadassTracker.Specifications.StepDefinitions
             _sicknessEpisodeEventCreationContext.StartCreation();
         }
 
+        [When(@"I specify an End Time")]
+        public void WhenISpecifyAnEndTime()
+        {
+            _sicknessEpisodeEventCreationContext.SpecifyEndTime();
+        }
+
         [When(@"I press add")]
         public void WhenIPressAdd()
         {
@@ -30,5 +36,12 @@ namespace BadassTracker.Specifications.StepDefinitions
         {
             _sicknessEpisodeEventCreationContext.AssertEventTracked();
         }
+
+        [Then(@"it should reflect my desired End Time")]
+        public void ThenItShouldReflectMyDesiredEndTime()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
     }
 }
