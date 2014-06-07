@@ -40,7 +40,7 @@ namespace BadassTracker.Specifications.StepDefinitions
         [Then(@"it should reflect my desired End Time")]
         public void ThenItShouldReflectMyDesiredEndTime()
         {
-            ScenarioContext.Current.Pending();
+            _sicknessEpisodeEventCreationContext.AssertCorrectEndDateTime();
         }
 
     }

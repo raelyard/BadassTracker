@@ -63,5 +63,11 @@ namespace BadassTracker.Specifications.Support
         {
             _persister.AssertWasCalled(persister => persister.Add(_event));
         }
+
+        public void AssertCorrectEndDateTime()
+        {
+            _endDateTime.HasValue.ShouldBeTrue("End Date Time did not get set.");
+            _event.EndDateTime.ShouldEqual(_endDateTime.Value);
+        }
     }
 }
