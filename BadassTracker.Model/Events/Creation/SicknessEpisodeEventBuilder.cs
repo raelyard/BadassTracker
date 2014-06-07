@@ -4,21 +4,15 @@ namespace BadassTracker.Model.Events.Creation
 {
     public class SicknessEpisodeEventBuilder
     {
-        private readonly SicknessEpisodeEvent _event;
-
-        public SicknessEpisodeEventBuilder()
-        {
-            _event = new SicknessEpisodeEvent();
-        }
-
+        private DateTime? _endDateTime;
         public SicknessEpisodeEvent Build()
         {
-            return _event;
+            return new SicknessEpisodeEvent(_endDateTime);
         }
 
         public SicknessEpisodeEventBuilder EndingAt(DateTime endDateTime)
         {
-            _event.EndingAt(endDateTime);
+            _endDateTime = endDateTime;
             return this;
         }
     }

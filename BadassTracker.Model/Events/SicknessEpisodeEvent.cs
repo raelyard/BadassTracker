@@ -4,18 +4,13 @@ namespace BadassTracker.Model.Events
 {
     public class SicknessEpisodeEvent
     {
-        public SicknessEpisodeEvent()
+        internal SicknessEpisodeEvent(DateTime? endDateTime)
         {
             StartDateTime = DateTime.Now;
-            EndDateTime = StartDateTime;
+            EndDateTime = endDateTime ?? StartDateTime;
         }
 
         public DateTime StartDateTime { get; private set; }
         public DateTime EndDateTime { get; private set; }
-
-        internal void EndingAt(DateTime endDateTime)
-        {
-            EndDateTime = endDateTime;
-        }
     }
 }
