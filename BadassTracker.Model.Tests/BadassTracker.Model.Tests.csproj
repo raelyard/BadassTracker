@@ -52,6 +52,7 @@
     <Compile Include="Events\DomainServices\SicknessEpisodeEventManagerTests\WhenCreatingASicknessEpisodeEvent.cs" />
     <Compile Include="Events\DomainServices\SicknessEpisodeEventManagerTests\WhenCreatingASicknessEpisodeEventWithDefaultValues.cs" />
     <Compile Include="Events\DomainServices\SicknessEpisodeEventManagerTests\WhenCreatingASicknessEpisodeEventWithEndDate.cs" />
+    <Compile Include="Events\DomainServices\SicknessEpisodeEventManagerTests\WhenCreatingASicknessEpisodeEventWithStartDate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
