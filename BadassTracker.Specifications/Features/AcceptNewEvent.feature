@@ -14,3 +14,10 @@ Scenario: Track Sickness Episode With Explicit End Time
 	And I press add
 	Then My Sickness Episode should be tracked
 	And it should reflect my desired End Time
+
+Scenario: Track Sickness Episode With Explicit Start Time
+	Given I am Creating a Sickness Episode Event
+	When I specify an Start Time
+	And I press add
+	Then My Sickness Episode should be tracked
+	And it should reflect my desired Start Time

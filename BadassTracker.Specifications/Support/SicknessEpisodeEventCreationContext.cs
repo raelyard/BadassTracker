@@ -14,6 +14,7 @@ namespace BadassTracker.Specifications.Support
         private readonly EventPersister _persister;
         private readonly SicknessEpisodeEventManager _manager;
 
+        private DateTime? _startDateTime;
         private DateTime? _endDateTime;
 
         public SicknessEpisodeEventCreationContext()
@@ -27,6 +28,11 @@ namespace BadassTracker.Specifications.Support
             // doing nothing for the moment - this will be used for setting context when creating events via user interface
         }
 
+        public void SpecifyStartTime()
+        {
+            _startDateTime = DateTime.Now.AddHours(.5);
+        }
+
         public void SpecifyEndTime()
         {
             _endDateTime = DateTime.Now.AddHours(1);
@@ -35,6 +41,10 @@ namespace BadassTracker.Specifications.Support
         public void CreateEvent()
         {
             Action<SicknessEpisodeEventBuilder> builderAction = builder => { };
+            if (_startDateTime.HasValue)
+            {
+                builderAction = builder => builder.StartingAt(_startDateTime.Value);
+            }
             if (_endDateTime.HasValue)
             {
                 builderAction = builder => builder.EndingAt(_endDateTime.Value);
@@ -62,6 +72,12 @@ namespace BadassTracker.Specifications.Support
         private void AssertEventSaved()
         {
             _persister.AssertWasCalled(persister => persister.Add(_event));
+        }
+
+        public void AssertCorrectStartDateTime()
+        {
+            _startDateTime.HasValue.ShouldBeTrue("Start Date Time did not get set.");
+            _event.StartDateTime.ShouldEqual(_startDateTime.Value);
         }
 
         public void AssertCorrectEndDateTime()

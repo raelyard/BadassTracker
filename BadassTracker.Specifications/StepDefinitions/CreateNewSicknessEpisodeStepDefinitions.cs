@@ -1,4 +1,5 @@
-﻿using BadassTracker.Specifications.Support;
+﻿using System;
+using BadassTracker.Specifications.Support;
 using TechTalk.SpecFlow;
 
 namespace BadassTracker.Specifications.StepDefinitions
@@ -19,10 +20,18 @@ namespace BadassTracker.Specifications.StepDefinitions
             _sicknessEpisodeEventCreationContext.StartCreation();
         }
 
-        [When(@"I specify an End Time")]
-        public void WhenISpecifyAnEndTime()
+        [When(@"I specify an (.*) Time")]
+        public void WhenISpecifyAnEndTime(StartOrEnd startOrEnd)
         {
-            _sicknessEpisodeEventCreationContext.SpecifyEndTime();
+            switch (startOrEnd)
+            {
+                case StartOrEnd.Start:
+                    _sicknessEpisodeEventCreationContext.SpecifyStartTime();
+                    break;
+                case StartOrEnd.End:
+                    _sicknessEpisodeEventCreationContext.SpecifyEndTime();
+                    break;
+            }
         }
 
         [When(@"I press add")]
@@ -37,11 +46,25 @@ namespace BadassTracker.Specifications.StepDefinitions
             _sicknessEpisodeEventCreationContext.AssertEventTracked();
         }
 
-        [Then(@"it should reflect my desired End Time")]
-        public void ThenItShouldReflectMyDesiredEndTime()
+        [Then(@"it should reflect my desired (.*) Time")]
+        public void ThenItShouldReflectMyDesiredEndTime(StartOrEnd startOrEnd)
         {
-            _sicknessEpisodeEventCreationContext.AssertCorrectEndDateTime();
+            switch (startOrEnd)
+            {
+                case StartOrEnd.Start:
+                    _sicknessEpisodeEventCreationContext.AssertCorrectStartDateTime();
+                    break;
+                case StartOrEnd.End:
+                    _sicknessEpisodeEventCreationContext.AssertCorrectEndDateTime();
+                    break;
+            }
         }
 
+    }
+
+    public enum StartOrEnd
+    {
+        Start,
+        End
     }
 }
